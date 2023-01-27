@@ -81,31 +81,20 @@ echo -n "SUPPORT_EMAIL: "
 read SUPPORT_EMAIL
 export SUPPORT_EMAIL
 
-#TELEGRAM - telegram chat URL (i.e. https://t.me/opencex)
-#TG_NEWS - telegram channel URL (https://t.me/opencex)
+#TELEGRAM - telegram chat URL (i.e. opencex)
 #FACEBOOK - facebook page URL
 #TWITTER - twitter page URL
 #LINKEDIN - linkedin page URL
 
-#echo -n "TELEGRAM:"
-#read TELEGRAM
-#export TELEGRAM
+TELEGRAM=opencex
+FACEBOOK=polygant
+TWITTER=polygant
+LINKEDIN=polygant
 
-#echo -n "TG_NEWS:"
-#read TG_NEWS
-#export TG_NEWS
-
-#echo -n "FACEBOOK:"
-#read FACEBOOK
-#export FACEBOOK
-
-#echo -n "TWITTER:"
-#read TWITTER
-#export TWITTER
-
-#echo -n "LINKEDIN:"
-#read LINKEDIN
-#export LINKEDIN
+export TELEGRAM
+export FACEBOOK
+export TWITTER
+export LINKEDIN
 
 echo "-----------------------------------------------------------"
     read -p "IS EVERYTHING CORRECT? (y or n)" YESORNO
