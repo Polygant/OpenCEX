@@ -53,6 +53,7 @@ Developed by <a href="https://polygant.net" target="_blank">Polygant</a>.
 
 ## Before installing:
 
+-   Watch the installation video [https://youtu.be/c-WnQkvBwf0](https://youtu.be/c-WnQkvBwf0)
 -   Order a virtual or physical server, not below the minimum requirements. You will need full access to this server (root). Shared hosting will not work.
 -   Bind the IPv4 address you received when purchasing the server to your domain. If you don't have a domain yet, you can use [https://nip.io/](https://nip.io/) or [https://sslip.io/](https://sslip.io/).
 -   Sign up for a Google account and get reCAPTCHA V2 keys (invisible). [https://www.google.com/recaptcha/](https://www.google.com/recaptcha/)
