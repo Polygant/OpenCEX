@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://polygant.net/opencex/" target="_blank">
-    <img alt="OpenCEX Logo" width="500" src="https://lh4.googleusercontent.com/UohAsQog0XnUVCo98CjwMb_rvvsxpuC7ZKWTJjLxA_AQrrC2yoqUdV7euU0SjgGa5OY3B6h0vgTYHC0MGpm5i41rR_qVqdyX6B4F0um6QZU94r_wNjpIsiQw96k-1iDUKvcCvwtuJg9ySrdbaOz1qU2jqAt3EY7DIVOhutZMDpw_in2GcxdGckVbNbw6hw">
+    <img alt="OpenCEX Logo" width="500" src="https://github.com/Polygant/OpenCEX/blob/master/logo.png">
   </a>
 </p>
 
