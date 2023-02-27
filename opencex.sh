@@ -169,6 +169,10 @@ ETHERSCAN_KEY* - used for the ETH blockchain data
 
 CRYPTOCOMPARE_API_KEY* - used for the market data
 
+BSCSCAN_KEY* - used for the BSC blockchain data
+
+TRONGRID_API_KEY* - used for the Tron blockchain data
+
 -----------------------------------------------------------
 YOLLOPUKKI`"
 
@@ -190,6 +194,14 @@ echo -n "CRYPTOCOMPARE_API_KEY*: "
 read CRYPTOCOMPARE_API_KEY
 export CRYPTOCOMPARE_API_KEY
 
+echo -n "TRONGRID_API_KEY*: "
+read TRONGRID_API_KEY
+export TRONGRID_API_KEY
+
+echo -n "BSCSCAN_KEY*: "
+read BSCSCAN_KEY
+export BSCSCAN_KEY
+
 echo "-----------------------------------------------------------"
     read -p "IS EVERYTHING CORRECT? (y or n)" YESORNO
     case $YESORNO in
@@ -208,6 +220,8 @@ echo "`cat <<YOLLOPUKKI
 
 BTC_SAFE_ADDR* - bitcoin address. All BTC deposits go there
 ETH_SAFE_ADDR* - ethereum address. All ETH and ERC-20 deposits go there
+BNB_SAFE_ADDR* - binance smart chain address. All BNB and BEP-20 deposits go there
+TRX_SAFE_ADDR* - tron address. All TRX and TRC-20 deposits go there
 
 -----------------------------------------------------------
 YOLLOPUKKI`"
@@ -221,6 +235,14 @@ export BTC_SAFE_ADDR
 echo -n "ETH_SAFE_ADDR*: "
 read ETH_SAFE_ADDR
 export ETH_SAFE_ADDR
+
+echo -n "BNB_SAFE_ADDR*: "
+read BNB_SAFE_ADDR
+export BNB_SAFE_ADDR
+
+echo -n "TRX_SAFE_ADDR*: "
+read TRX_SAFE_ADDR
+export TRX_SAFE_ADDR
 
 echo "-----------------------------------------------------------"
     read -p "IS EVERYTHING CORRECT? (y or n)" YESORNO
@@ -392,6 +414,14 @@ export SCORECHAIN_BITCOIN_TOKEN
 echo -n "SCORECHAIN_ETHEREUM_TOKEN: "
 read SCORECHAIN_ETHEREUM_TOKEN
 export SCORECHAIN_ETHEREUM_TOKEN
+
+echo -n "SCORECHAIN_TRON_TOKEN: "
+read SCORECHAIN_TRON_TOKEN
+export SCORECHAIN_TRON_TOKEN
+
+echo -n "SCORECHAIN_BNB_TOKEN: "
+read SCORECHAIN_BNB_TOKEN
+export SCORECHAIN_BNB_TOKEN
 
 fi
 
