@@ -790,6 +790,10 @@ cd /app/opencex || exit
 docker compose stop
 docker compose up -d
 
+### Registration of the installation OpenCEX
+curl --location 'http://alertbot.plgdev.com/registration' \
+--header 'Content-Type: application/json' \
+--data "{\"domain\": \"${DOMAIN}\"}"
 
 
 # cleanup
