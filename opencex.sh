@@ -41,7 +41,7 @@ if test ! -f "$FILE"; then
 echo "`cat <<YOLLOPUKKI
 
 ===========================================================
-     STEP 1 OF 8. PROJECT VARIABLES
+     STEP 1 OF 10. PROJECT VARIABLES
 ===========================================================
 
 PROJECT_NAME* - name of your exchange
@@ -109,7 +109,7 @@ done
 echo "`cat <<YOLLOPUKKI
 
 ===========================================================
-     STEP 2 OF 8. COMMON SERVICES
+     STEP 2 OF 10. COMMON SERVICES
 ===========================================================
 
 RECAPTCHA* - Google Captcha site key
@@ -159,7 +159,7 @@ done
 echo "`cat <<YOLLOPUKKI
 
 ===========================================================
-     STEP 3 OF 8. BLOCKCHAIN SERVICES
+     STEP 3 OF 10. BLOCKCHAIN SERVICES
 ===========================================================
 
 INFURA_API_KEY* - used for the ETH blockchain data
@@ -168,10 +168,6 @@ INFURA_API_SECRET* - used for the ETH blockchain data
 ETHERSCAN_KEY* - used for the ETH blockchain data
 
 CRYPTOCOMPARE_API_KEY* - used for the market data
-
-BSCSCAN_KEY* - used for the BSC blockchain data
-
-TRONGRID_API_KEY* - used for the Tron blockchain data
 
 -----------------------------------------------------------
 YOLLOPUKKI`"
@@ -194,14 +190,6 @@ echo -n "CRYPTOCOMPARE_API_KEY*: "
 read CRYPTOCOMPARE_API_KEY
 export CRYPTOCOMPARE_API_KEY
 
-echo -n "TRONGRID_API_KEY*: "
-read TRONGRID_API_KEY
-export TRONGRID_API_KEY
-
-echo -n "BSCSCAN_KEY*: "
-read BSCSCAN_KEY
-export BSCSCAN_KEY
-
 echo "-----------------------------------------------------------"
     read -p "IS EVERYTHING CORRECT? (y or n)" YESORNO
     case $YESORNO in
@@ -215,13 +203,11 @@ done
 echo "`cat <<YOLLOPUKKI
 
 ===========================================================
-     STEP 4 OF 8. SAFE ADDRESSES
+     STEP 4 OF 10. SAFE ADDRESSES
 ===========================================================
 
 BTC_SAFE_ADDR* - bitcoin address. All BTC deposits go there
 ETH_SAFE_ADDR* - ethereum address. All ETH and ERC-20 deposits go there
-BNB_SAFE_ADDR* - binance smart chain address. All BNB and BEP-20 deposits go there
-TRX_SAFE_ADDR* - tron address. All TRX and TRC-20 deposits go there
 
 -----------------------------------------------------------
 YOLLOPUKKI`"
@@ -236,13 +222,49 @@ echo -n "ETH_SAFE_ADDR*: "
 read ETH_SAFE_ADDR
 export ETH_SAFE_ADDR
 
+echo "-----------------------------------------------------------"
+    read -p "IS EVERYTHING CORRECT? (y or n)" YESORNO
+    case $YESORNO in
+        [Yy]* ) break;;
+        [Nn]* ) echo "Re-enter the parameters.";;
+        * ) break;;
+    esac
+done
+
+
+echo "`cat <<YOLLOPUKKI
+
+=======================================================================================
+     STEP 5 of 10. BINANCE BSC BLOCKCHAIN, BNB and USDT BEP-20 SUPPORT. (optional)
+=======================================================================================
+
+You can set ENABLED_BNB: False or leave it blank to turn it off.
+
+BSCSCAN_KEY* - used for the BSC blockchain data
+BNB_SAFE_ADDR* - binance smart chain address. All BNB and BEP-20 deposits go there
+
+---------------------------------------------------------------------------------------
+YOLLOPUKKI`"
+
+
+while true; do
+
+echo -n "ENABLED_BNB (True/False): "
+read ENABLED_BNB
+export ENABLED_BNB
+
+if [ "$ENABLED_BNB" = "True" ]; then
+
+echo -n "BSCSCAN_KEY*: "
+read BSCSCAN_KEY
+export BSCSCAN_KEY
+
 echo -n "BNB_SAFE_ADDR*: "
 read BNB_SAFE_ADDR
 export BNB_SAFE_ADDR
 
-echo -n "TRX_SAFE_ADDR*: "
-read TRX_SAFE_ADDR
-export TRX_SAFE_ADDR
+
+fi
 
 echo "-----------------------------------------------------------"
     read -p "IS EVERYTHING CORRECT? (y or n)" YESORNO
@@ -253,10 +275,64 @@ echo "-----------------------------------------------------------"
     esac
 done
 
+
+
+
+
+echo "`cat <<YOLLOPUKKI
+
+=======================================================================================
+     STEP 6 of 10. TRON BLOCKCHAIN, TRX and USDT TRC-20 SUPPORT. (optional)
+=======================================================================================
+
+You can set ENABLED_TRON: False or leave it blank to turn it off.
+
+TRONGRID_API_KEY* - used for the Tron blockchain data
+TRX_SAFE_ADDR* - tron address. All TRX and TRC-20 deposits go there
+
+---------------------------------------------------------------------------------------
+
+YOLLOPUKKI`"
+
+
+while true; do
+
+echo -n "ENABLED_TRON (True/False): "
+read ENABLED_TRON
+export ENABLED_TRON
+
+if [ "$ENABLED_TRON" = "True" ]; then
+
+echo -n "TRONGRID_API_KEY*: "
+read TRONGRID_API_KEY
+export TRONGRID_API_KEY
+
+echo -n "TRX_SAFE_ADDR*: "
+read TRX_SAFE_ADDR
+export TRX_SAFE_ADDR
+
+
+fi
+
+echo "-----------------------------------------------------------"
+    read -p "IS EVERYTHING CORRECT? (y or n)" YESORNO
+    case $YESORNO in
+        [Yy]* ) break;;
+        [Nn]* ) echo "Re-enter the parameters.";;
+        * ) break;;
+    esac
+done
+
+
+
+
+
+
+
 echo "`cat <<YOLLOPUKKI
 
 ===========================================================
-     STEP 5 OF 8. EMAIL SERVICE
+     STEP 7 OF 10. EMAIL SERVICE
 ===========================================================
 
 Used for sending notifications and alerts.
@@ -299,7 +375,7 @@ done
 echo "`cat <<YOLLOPUKKI
 
 ===========================================================
-     STEP 6 OF 8. SMS SERVICE TWILIO (optional)
+     STEP 8 OF 10. SMS SERVICE TWILIO (optional)
 ===========================================================
 
 Used for sending notifications and alerts. 
@@ -346,7 +422,7 @@ done
 echo "`cat <<YOLLOPUKKI
 
 ===========================================================
-     STEP 7 OF 8. KYC PROVIDER SUMSUB (OPTIONAL)
+     STEP 9 OF 10. KYC PROVIDER SUMSUB (OPTIONAL)
 ===========================================================
 
 Used for KYC. 
@@ -389,7 +465,7 @@ done
 echo "`cat <<YOLLOPUKKI
 
 ===========================================================
-     STEP 8 OF 8. KYT PROVIDER SCORECHAIN (OPTIONAL)
+     STEP 10 OF 10. KYT PROVIDER SCORECHAIN (OPTIONAL)
 ===========================================================
 
 Used for KYT. 
