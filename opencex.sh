@@ -747,7 +747,123 @@ services:
        - /app/opencex/backend:/app
      networks:
        - caddy
-
+    opencexbnbblocks:
+      container_name: opencexbnbblocks
+      image: opencex:latest
+      command: bash -c "celery -A exchange worker -l info -n bnb_new_blocks -Q bnb_new_blocks -c 1 "
+      restart: always
+      volumes:
+        - /app/opencex/backend:/app
+      networks:
+        - caddy
+    opencexbnbdeposits:
+      container_name: opencexbnbdeposits
+      image: opencex:latest
+      command: bash -c "celery -A exchange worker -l info -n bnb_deposits -Q bnb_deposits -c 1 "
+      restart: always
+      volumes:
+        - /app/opencex/backend:/app
+      networks:
+        - caddy
+    opencexbnbpayouts:
+      container_name: opencexbnbpayouts
+      image: opencex:latest
+      command: bash -c "celery -A exchange worker -l info -n bnb_payouts -Q bnb_payouts -c 1 "
+      restart: always
+      volumes:
+        - /app/opencex/backend:/app
+      networks:
+        - caddy
+    opencexbnbbalances:
+      container_name: opencexbnbbalances
+      image: opencex:latest
+      command: bash -c "celery -A exchange worker -l info -n bnb_check_balances -Q bnb_check_balances -c 1 "
+      restart: always
+      volumes:
+        - /app/opencex/backend:/app
+      networks:
+        - caddy
+    opencexbnbaccumulations:
+      container_name: opencexbnbaccumulations
+      image: opencex:latest
+      command: bash -c "celery -A exchange worker -l info -n bnb_accumulations -Q bnb_accumulations -c 1 "
+      restart: always
+      volumes:
+        - /app/opencex/backend:/app
+      networks:
+        - caddy
+    opencexbepaccumulations:
+      container_name: opencexbepaccumulations
+      image: opencex:latest
+      command: bash -c "celery -A exchange worker -l info -n bep20_accumulations -Q bep20_accumulations -c 1 "
+      restart: always
+      volumes:
+        - /app/opencex/backend:/app
+      networks:
+        - caddy
+    opencexbnbgas:
+      container_name: opencexbnbgas
+      image: opencex:latest
+      command: bash -c "celery -A exchange worker -l info -n bnb_send_gas -Q bnb_send_gas -c 1 "
+      restart: always
+      volumes:
+        - /app/opencex/backend:/app
+      networks:
+        - caddy
+    opencextrxblocks:
+      container_name: opencextrxblocks
+      image: opencex:latest
+      command: bash -c "celery -A exchange worker -l info -n trx_new_blocks -Q trx_new_blocks -c 1 "
+      restart: always
+      volumes:
+        - /app/opencex/backend:/app
+      networks:
+        - caddy
+    opencextrxdeposits:
+      container_name: opencextrxdeposits
+      image: opencex:latest
+      command: bash -c "celery -A exchange worker -l info -n trx_deposits -Q trx_deposits -c 1 "
+      restart: always
+      volumes:
+        - /app/opencex/backend:/app
+      networks:
+        - caddy
+    opencextrxpayouts:
+      container_name: opencextrxpayouts
+      image: opencex:latest
+      command: bash -c "celery -A exchange worker -l info -n trx_payouts -Q trx_payouts -c 1 "
+      restart: always
+      volumes:
+        - /app/opencex/backend:/app
+      networks:
+        - caddy
+    opencextrxbalances:
+      container_name: opencextrxbalances
+      image: opencex:latest
+      command: bash -c "celery -A exchange worker -l info -n trx_check_balances -Q trx_check_balances -c 1 "
+      restart: always
+      volumes:
+        - /app/opencex/backend:/app
+      networks:
+        - caddy
+    opencextrxaccumulations:
+      container_name: opencextrxaccumulations
+      image: opencex:latest
+      command: bash -c "celery -A exchange worker -l info -n trx_accumulations -Q trx_accumulations -c 1 "
+      restart: always
+      volumes:
+        - /app/opencex/backend:/app
+      networks:
+        - caddy
+    opencextrcaccumulations:
+      container_name: opencextrcaccumulations
+      image: opencex:latest
+      command: bash -c "celery -A exchange worker -l info -n trc20_accumulations -Q trc20_accumulations -c 1 "
+      restart: always
+      volumes:
+        - /app/opencex/backend:/app
+      networks:
+        - caddy
     frontend:
      image: frontend:latest
      container_name: frontend
