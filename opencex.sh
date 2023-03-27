@@ -671,6 +671,7 @@ services:
       - nuxt
       - caddy
       - bitcoind
+      - opencex
 
     opencexcel:
      container_name: opencexcel
@@ -689,6 +690,7 @@ services:
       - nuxt
       - caddy
       - bitcoind
+      - opencex
 
     opencex-matching:
      container_name: opencex-matching
@@ -707,6 +709,7 @@ services:
       - nuxt
       - caddy
       - bitcoind
+      - opencex
 
     opencex-btc:
      container_name: opencex-btc
@@ -725,6 +728,7 @@ services:
       - nuxt
       - caddy
       - bitcoind
+      - opencex
 
     opencex-eth-blocks:
      container_name: opencex-eth-blocks
@@ -743,6 +747,7 @@ services:
       - nuxt
       - caddy
       - bitcoind
+      - opencex
 
     opencex-eth-deposits:
      container_name: opencex-eth-deposits
@@ -761,6 +766,7 @@ services:
       - nuxt
       - caddy
       - bitcoind
+      - opencex
 
     opencex-eth-payouts:
      container_name: opencex-eth-payouts
@@ -779,6 +785,7 @@ services:
       - nuxt
       - caddy
       - bitcoind
+      - opencex
 
     opencex-eth-balances:
      container_name: opencex-eth-balances
@@ -797,6 +804,7 @@ services:
       - nuxt
       - caddy
       - bitcoind
+      - opencex
 
     opencex-eth-accumulations:
      container_name: opencex-eth-accumulations
@@ -815,6 +823,7 @@ services:
       - nuxt
       - caddy
       - bitcoind
+      - opencex
 
     opencex-erc-accumulations:
      container_name: opencex-erc-accumulations
@@ -833,6 +842,7 @@ services:
       - nuxt
       - caddy
       - bitcoind
+      - opencex
 
     opencex-eth-gas:
      container_name: opencex-eth-gas
@@ -851,6 +861,7 @@ services:
       - nuxt
       - caddy
       - bitcoind
+      - opencex
 
     opencexbnbblocks:
      container_name: opencexbnbblocks
@@ -869,6 +880,7 @@ services:
       - nuxt
       - caddy
       - bitcoind
+      - opencex
 
     opencexbnbdeposits:
      container_name: opencexbnbdeposits
@@ -887,6 +899,7 @@ services:
       - nuxt
       - caddy
       - bitcoind
+      - opencex
 
     opencexbnbpayouts:
      container_name: opencexbnbpayouts
@@ -905,6 +918,7 @@ services:
       - nuxt
       - caddy
       - bitcoind
+      - opencex
 
     opencexbnbbalances:
      container_name: opencexbnbbalances
@@ -923,6 +937,7 @@ services:
       - nuxt
       - caddy
       - bitcoind
+      - opencex
 
     opencexbnbaccumulations:
      container_name: opencexbnbaccumulations
@@ -941,6 +956,7 @@ services:
       - nuxt
       - caddy
       - bitcoind
+      - opencex
 
     opencexbepaccumulations:
      container_name: opencexbepaccumulations
@@ -959,6 +975,7 @@ services:
       - nuxt
       - caddy
       - bitcoind
+      - opencex
 
     opencexbnbgas:
      container_name: opencexbnbgas
@@ -977,6 +994,7 @@ services:
       - nuxt
       - caddy
       - bitcoind
+      - opencex
 
     opencextrxblocks:
      container_name: opencextrxblocks
@@ -995,6 +1013,7 @@ services:
       - nuxt
       - caddy
       - bitcoind
+      - opencex
 
     opencextrxdeposits:
      container_name: opencextrxdeposits
@@ -1013,6 +1032,7 @@ services:
       - nuxt
       - caddy
       - bitcoind
+      - opencex
 
     opencextrxpayouts:
      container_name: opencextrxpayouts
@@ -1031,6 +1051,7 @@ services:
       - nuxt
       - caddy
       - bitcoind
+      - opencex
 
     opencextrxbalances:
      container_name: opencextrxbalances
@@ -1049,6 +1070,7 @@ services:
       - nuxt
       - caddy
       - bitcoind
+      - opencex
 
     opencextrxaccumulations:
      container_name: opencextrxaccumulations
@@ -1067,6 +1089,7 @@ services:
       - nuxt
       - caddy
       - bitcoind
+      - opencex
 
     opencextrcaccumulations:
      container_name: opencextrcaccumulations
@@ -1085,6 +1108,7 @@ services:
       - nuxt
       - caddy
       - bitcoind
+      - opencex
 
     frontend:
      image: frontend:latest
