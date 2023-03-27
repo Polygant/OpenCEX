@@ -8,6 +8,8 @@ if [ $(dpkg-query -W -f='${Status}' docker-ce 2>/dev/null | grep -c "ok installe
     echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
     sudo apt-get update > /dev/null 2>&1
     sudo apt-get install -y docker-ce docker-ce-cli containerd.io git docker-compose-plugin > /dev/null 2>&1
+    sudo systemctl enable docker > /dev/null 2>&1
+    sudo systemctl start docker > /dev/null 2>&1
     echo "Docker has been successfully installed."
 else
     echo "Docker already installed."
