@@ -1149,7 +1149,6 @@ services:
       volumes:
         - /var/run/docker.sock:/var/run/docker.sock
         - ./caddy_data:/data
-      restart: always
 
     postgresql:
      container_name: postgresql
