@@ -182,8 +182,6 @@ INFURA_API_SECRET* - used for the ETH blockchain data
 
 ETHERSCAN_KEY* - used for the ETH blockchain data
 
-CRYPTOCOMPARE_API_KEY* - used for the market data
-
 -----------------------------------------------------------
 YOLLOPUKKI`"
 
@@ -200,10 +198,6 @@ export INFURA_API_SECRET
 echo -n "ETHERSCAN_KEY*: "
 read ETHERSCAN_KEY
 export ETHERSCAN_KEY
-
-echo -n "CRYPTOCOMPARE_API_KEY*: "
-read CRYPTOCOMPARE_API_KEY
-export CRYPTOCOMPARE_API_KEY
 
 echo "-----------------------------------------------------------"
     read -p "IS EVERYTHING CORRECT? (y or n)" YESORNO
