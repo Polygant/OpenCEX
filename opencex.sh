@@ -18,9 +18,9 @@ fi
 
 mkdir /app/opencex -p
 cd /app/opencex || exit
-git clone -b stage https://github.com/Polygant/OpenCEX-backend.git ./backend
-git clone -b stage https://github.com/Polygant/OpenCEX-frontend.git ./frontend
-git clone -b stage https://github.com/Polygant/OpenCEX-static.git ./nuxt
+git clone https://github.com/Polygant/OpenCEX-backend.git ./backend
+git clone https://github.com/Polygant/OpenCEX-frontend.git ./frontend
+git clone https://github.com/Polygant/OpenCEX-static.git ./nuxt
 
 
 echo "`cat <<YOLLOPUKKI
