@@ -14,8 +14,8 @@ Developed by <a href="https://polygant.net" target="_blank">Polygant</a>.
 
 ## Main features.
 
--   Custodial wallet supporting BTC, ETH, USDT (ERC-20). Deposit and withdrawal.
--   Order matching engine. Trading pairs BTC-USDT, ETH-USDT.
+-   Custodial wallet supporting BTC, ETH, BNB, TRX, USDT (ERC-20, BEP-20, TRC-20). Deposit and withdrawal.
+-   Order matching engine. Trading pairs BTC-USDT, ETH-USDT, BNB-USDT, TRX-USDT.
 -   Professional exchange interface for placing orders.    
 -   Simplified interface for quick swap.
 -   KYT transaction verification (requires Scorechain keys).
@@ -58,10 +58,11 @@ Developed by <a href="https://polygant.net" target="_blank">Polygant</a>.
 -   Bind the IPv4 address you received when purchasing the server to your domain. If you don't have a domain yet, you can use [https://nip.io/](https://nip.io/) or [https://sslip.io/](https://sslip.io/).
 -   Sign up for a Google account and get reCAPTCHA V2 keys (invisible). [https://www.google.com/recaptcha/](https://www.google.com/recaptcha/)
 -   Get the SMTP server credentials for sending emails (any will do, i.e. [https://www.mailgun.com/](https://www.mailgun.com/)).
--   Register a Cryptocompare account ([https://www.cryptocompare.com](https://www.cryptocompare.com)) and create an API key.
 -   Register an Infura account ([https://infura.io/](https://infura.io/)) and create an API key + secret.
 -   Register an Etherscan account ([https://etherscan.io/](https://etherscan.io/)) and create an API key.
--   You will need BTC and ETH addresses to collect cryptocurrency deposits (cold addresses). If you don't have it yet, you can use any multi-currency wallet like Trust Wallet and generate BTC, ETH addresses.
+-   You will need BTC, ETH addresses and BNB, TRX addresses(optional) to collect cryptocurrency deposits (cold addresses). If you don't have it yet, you can use any multi-currency wallet like Trust Wallet and generate BTC, ETH, BNB, TRX addresses.
+-   OPTIONAL. For BNB и BEP-20 support you will need Bscscan credentials (https://bscscan.com/)
+-   OPTIONAL. For TRX and TRC-20 support you will need Trondrid credentials (https://www.trongrid.io/)
 -   OPTIONAL. For SMS verification you will need Twilio credentials ([https://twilio.com](https://twilio.com))
 -   OPTIONAL. For KYT you need Scorechain credentials ([https://www.scorechain.com/](https://www.scorechain.com/))
 -   OPTIONAL. For KYC you will need Sumsub credentials ([https://sumsub.com/](https://sumsub.com/))
