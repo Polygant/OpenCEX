@@ -18,9 +18,9 @@ fi
 
 mkdir /app/opencex -p
 cd /app/opencex || exit
-git clone https://github.com/Polygant/OpenCEX-backend.git ./backend
-git clone https://github.com/Polygant/OpenCEX-frontend.git ./frontend
-git clone https://github.com/Polygant/OpenCEX-static.git ./nuxt
+git clone -b stage https://github.com/Polygant/OpenCEX-backend.git ./backend
+git clone -b stage https://github.com/Polygant/OpenCEX-frontend.git ./frontend
+git clone -b stage https://github.com/Polygant/OpenCEX-static.git ./nuxt
 
 
 echo "`cat <<YOLLOPUKKI
@@ -105,11 +105,13 @@ TELEGRAM=opencex
 FACEBOOK=polygant
 TWITTER=polygant
 LINKEDIN=polygant
+LOGO=
 
 export TELEGRAM
 export FACEBOOK
 export TWITTER
 export LINKEDIN
+export LOGO
 
 echo "-----------------------------------------------------------"
     read -p "IS EVERYTHING CORRECT? (y or n)" YESORNO
