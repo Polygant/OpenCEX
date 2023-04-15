@@ -1,5 +1,6 @@
 #!/bin/bash
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+source $SCRIPT_DIR/install-deps.sh
 echo "`cat <<YOLLOPUKKI
 
 ===========================================================
@@ -585,3 +586,4 @@ if [ -f $SCRIPT_DIR/config.env ] ; then
 fi
 
 envsubst < /app/opencex/backend/.env.template > /app/opencex/backend/.env
+cp /app/opencex/backend/.env $SCRIPT_DIR/config.env
