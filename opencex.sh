@@ -49,20 +49,6 @@ FILE=/app/opencex/frontend/src/local_config
 
 if test ! -f "$FILE"; then
 envsubst < /app/opencex/frontend/src/example.local_config.js > /app/opencex/frontend/src/local_config
-### save to env
-
-cat << EOF >> /app/opencex/backend/.env
-
-#opencex frontend values
-RECAPTCHA=$RECAPTCHA
-TELEGRAM=$TELEGRAM
-TG_NEWS=$TG_NEWS
-SUPPORT_EMAIL=$SUPPORT_EMAIL
-FACEBOOK=$FACEBOOK
-TWITTER=$TWITTER
-LINKEDIN=$LINKEDIN
-EOF
-
 fi
 
 ##################

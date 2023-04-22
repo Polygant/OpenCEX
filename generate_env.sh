@@ -587,3 +587,15 @@ fi
 
 envsubst < /app/opencex/backend/.env.template > /app/opencex/backend/.env
 cp /app/opencex/backend/.env $SCRIPT_DIR/config.env
+
+### save to env
+cat << EOF >> /app/opencex/backend/.env
+#opencex frontend values
+RECAPTCHA=$RECAPTCHA
+TELEGRAM=$TELEGRAM
+TG_NEWS=$TG_NEWS
+SUPPORT_EMAIL=$SUPPORT_EMAIL
+FACEBOOK=$FACEBOOK
+TWITTER=$TWITTER
+LINKEDIN=$LINKEDIN
+EOF

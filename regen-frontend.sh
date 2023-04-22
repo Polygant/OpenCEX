@@ -14,11 +14,10 @@ sed -i "s/ADMIN_BASE_URL/$ADMIN_BASE_URL/g" /app/opencex/frontend/deploy/default
 sed -i "s/DOMAIN/$DOMAIN/g" /app/opencex/frontend/deploy/default.conf
 docker build -t frontend -f deploy/Dockerfile .
 
-: '
 mkdir -p /app/opencex/nuxt/deploy/
 cd /app/opencex/nuxt || exit
 cp /app/deploy/nuxt/.env.template /app/opencex/nuxt/
 cp /app/deploy/nuxt/Dockerfile /app/opencex/nuxt/deploy/Dockerfile
 envsubst < /app/opencex/nuxt/.env.template > /app/opencex/nuxt/.env                                                                                       
 docker build -t nuxt -f deploy/Dockerfile .  
-'
+
