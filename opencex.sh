@@ -42,8 +42,8 @@ source $SCRIPT_DIR/generate_env.sh
 cp $SCRIPT_DIR/config.env /app/opencex/backend/.env
 fi
 
-source /app/opencex/backend/.env
 set -a
+source /app/opencex/backend/.env
 cd /app/opencex/frontend || exit
 FILE=/app/opencex/frontend/src/local_config
 
