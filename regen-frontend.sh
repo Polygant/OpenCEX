@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 set -a
 source /app/opencex/backend/.env
 set +a

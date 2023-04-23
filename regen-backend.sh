@@ -1,4 +1,8 @@
 #/bin/bash
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+cp $SCRIPT_DIR/config.env /app/opencex/backend/.env
+
+set -e
 set -a
 source /app/opencex/backend/.env
 set +a
