@@ -18,10 +18,10 @@ fi
 
 mkdir /app/opencex -p
 cd /app/opencex || exit
-git clone https://github.com/Polygant/OpenCEX-backend.git ./backend
-git clone https://github.com/Polygant/OpenCEX-frontend.git ./frontend
-git clone https://github.com/Polygant/OpenCEX-static.git ./nuxt
-
+git clone -b stage https://github.com/Polygant/OpenCEX-backend.git ./backend
+git clone -b stage https://github.com/Polygant/OpenCEX-frontend.git ./frontend
+git clone -b stage https://github.com/Polygant/OpenCEX-static.git ./nuxt
+git clone -b stage https://github.com/Polygant/OpenCEX-JS-admin.git ./admin
 
 echo "`cat <<YOLLOPUKKI
 
@@ -628,6 +628,16 @@ cp /app/deploy/nuxt/Dockerfile /app/opencex/nuxt/deploy/Dockerfile
 envsubst < /app/opencex/nuxt/.env.template > /app/opencex/nuxt/.env
 docker build -t nuxt -f deploy/Dockerfile .
 
+# build admin
+mkdir -p /app/opencex/admin/deploy/
+cd /app/opencex/admin || exit
+cp /app/deploy/admin/Dockerfile /app/opencex/admin/deploy/Dockerfile
+cp /app/deploy/admin/default.conf /app/opencex/admin/deploy/default.conf
+cp /app/deploy/admin/.env.template /app/opencex/admin/
+envsubst < /app/opencex/admin/.env.template > /app/opencex/admin/src/local_config.js
+docker build -t admin -f deploy/Dockerfile .
+
+
 # build backend
 cd /app/opencex/backend/ || exit
 chmod +x /app/opencex/backend/manage.py
@@ -1135,6 +1145,12 @@ services:
     nuxt:
      image: nuxt:latest
      container_name: nuxt
+     restart: always
+     networks:
+     - caddy
+    admin:
+     image: admin:latest
+     container_name: admin
      restart: always
      networks:
      - caddy
