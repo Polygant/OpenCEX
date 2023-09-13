@@ -18,10 +18,10 @@ fi
 
 mkdir /app/opencex -p
 cd /app/opencex || exit
-git clone https://github.com/Polygant/OpenCEX-backend.git ./backend
-git clone https://github.com/Polygant/OpenCEX-frontend.git ./frontend
-git clone https://github.com/Polygant/OpenCEX-static.git ./nuxt
-git clone https://github.com/Polygant/OpenCEX-JS-admin.git ./admin
+git clone -b stage https://github.com/Polygant/OpenCEX-backend.git ./backend
+git clone -b stage https://github.com/Polygant/OpenCEX-frontend.git ./frontend
+git clone -b stage https://github.com/Polygant/OpenCEX-static.git ./nuxt
+git clone -b stage https://github.com/Polygant/OpenCEX-JS-admin.git ./admin
 
 echo "`cat <<YOLLOPUKKI
 
@@ -335,15 +335,58 @@ echo "-----------------------------------------------------------"
 done
 
 
+echo "`cat <<YOLLOPUKKI
+
+=======================================================================================
+ STEP 7 of 11. POLYGON BLOCKCHAIN, MATIC and USDT MATIC SUPPORT. (optional)
+=======================================================================================
+
+You can set ENABLED_POLYGON: False or leave it blank to turn it off.
+
+POLYGONSCAN_KEY* - used for the Polygon blockchain data
+MATIC_SAFE_ADDR* - Polygon address. All MATIC and ERC-20 (MATIC) deposits go there
+---------------------------------------------------------------------------------------
+
+YOLLOPUKKI`"
 
 
+while true; do
+
+echo -n "ENABLED_POLYGON (True/False): "
+read ENABLED_POLYGON
+export ENABLED_POLYGON
+COMMON_TASKS_MATIC=false
+export COMMON_TASKS_MATIC
+if [ "$ENABLED_POLYGON" = "True" ]; then
+
+COMMON_TASKS_MATIC=true
+export COMMON_TASKS_MATIC
+
+echo -n "POLYGONSCAN_KEY*: "
+read POLYGONSCAN_KEY
+export POLYGONSCAN_KEY
+
+echo -n "MATIC_SAFE_ADDR*: "
+read MATIC_SAFE_ADDR
+export MATIC_SAFE_ADDR
+
+fi
+
+echo "-----------------------------------------------------------"
+    read -p "IS EVERYTHING CORRECT? (y or n)" YESORNO
+    case $YESORNO in
+        [Yy]* ) break;;
+        [Nn]* ) echo "Re-enter the parameters.";;
+        * ) break;;
+    esac
+done
 
 
 
 echo "`cat <<YOLLOPUKKI
 
 ===========================================================
-     STEP 7 OF 10. EMAIL SERVICE
+     STEP 8 OF 11. EMAIL SERVICE
 ===========================================================
 
 Used for sending notifications and alerts.
@@ -386,7 +429,7 @@ done
 echo "`cat <<YOLLOPUKKI
 
 ===========================================================
-     STEP 8 OF 10. SMS SERVICE TWILIO (optional)
+     STEP 9 OF 11. SMS SERVICE TWILIO (optional)
 ===========================================================
 
 Used for sending notifications and alerts. 
@@ -433,7 +476,7 @@ done
 echo "`cat <<YOLLOPUKKI
 
 ===========================================================
-     STEP 9 OF 10. KYC PROVIDER SUMSUB (OPTIONAL)
+     STEP 10 OF 11. KYC PROVIDER SUMSUB (OPTIONAL)
 ===========================================================
 
 Used for KYC. 
@@ -476,7 +519,7 @@ done
 echo "`cat <<YOLLOPUKKI
 
 ===========================================================
-     STEP 10 OF 10. KYT PROVIDER SCORECHAIN (OPTIONAL)
+     STEP 11 OF 11. KYT PROVIDER SCORECHAIN (OPTIONAL)
 ===========================================================
 
 Used for KYT. 
