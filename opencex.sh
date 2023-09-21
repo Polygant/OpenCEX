@@ -341,7 +341,7 @@ echo "`cat <<YOLLOPUKKI
  STEP 7 of 11. POLYGON BLOCKCHAIN, MATIC and USDT MATIC SUPPORT. (optional)
 =======================================================================================
 
-You can set ENABLED_POLYGON: False or leave it blank to turn it off.
+You can set ENABLED_MATIC: False or leave it blank to turn it off.
 
 POLYGONSCAN_KEY* - used for the Polygon blockchain data
 MATIC_SAFE_ADDR* - Polygon address. All MATIC and ERC-20 (MATIC) deposits go there
@@ -352,12 +352,12 @@ YOLLOPUKKI`"
 
 while true; do
 
-echo -n "ENABLED_POLYGON (True/False): "
-read ENABLED_POLYGON
-export ENABLED_POLYGON
+echo -n "ENABLED_MATIC (True/False): "
+read ENABLED_MATIC
+export ENABLED_MATIC
 COMMON_TASKS_MATIC=false
 export COMMON_TASKS_MATIC
-if [ "$ENABLED_POLYGON" = "True" ]; then
+if [ "$ENABLED_MATIC" = "True" ]; then
 
 COMMON_TASKS_MATIC=true
 export COMMON_TASKS_MATIC
