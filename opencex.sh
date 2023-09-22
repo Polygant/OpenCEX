@@ -1078,7 +1078,7 @@ EOF
 
 docker compose up -d
 
-docker stop opencexcel opencexwss
+docker stop opencex-cel opencex-wss
 sleep 5;
 docker exec -it opencex python ./manage.py migrate
 docker exec -it opencex python ./manage.py collectstatic
