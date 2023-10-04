@@ -874,7 +874,7 @@ services:
     opencex-deposits:
      container_name: opencex-deposits
      image: opencex:latest
-     command: bash -c "celery -A exchange worker -l info -n matic_new_blocks -Q matic_new_blocks -c 1 "
+     command: bash -c "celery -A exchange worker -l info -n deposits -Q trx_deposits,bnb_deposits,eth_deposits,matic_deposits -c 1 "
      restart: always
      volumes:
       - /app/opencex/backend:/app
