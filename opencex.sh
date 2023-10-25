@@ -22,7 +22,6 @@ git clone -b stage https://github.com/Polygant/OpenCEX-backend.git ./backend
 git clone -b stage https://github.com/Polygant/OpenCEX-frontend.git ./frontend
 git clone -b stage https://github.com/Polygant/OpenCEX-static.git ./nuxt
 git clone -b stage https://github.com/Polygant/OpenCEX-JS-admin.git ./admin
-git clone -b stage https://github.com/Polygant/hummingbot.git ./hmbot
 
 echo "`cat <<YOLLOPUKKI
 
@@ -716,7 +715,6 @@ chmod +x /app/opencex/backend/manage.py
 docker build -t opencex .
 
 
-
 ### install Caddy
 
 mkdir /app/opencex -p
@@ -727,6 +725,9 @@ docker network create caddy
 
 cat << EOF > docker-compose.yml
 version: "3.7"
+networks:
+  caddy:
+    external: true
 services:
     opencex:
      container_name: opencex
@@ -1099,10 +1100,35 @@ services:
       - ./bitcoind_data/:/bitcoin/.bitcoin/
       networks:
       - caddy
-networks:
-  caddy:
-    external: true
 EOF
+
+# build hummingbot
+if [ "$IS_HUMMINGBOT_ENABLED" = "True" ]; then
+cd /app/opencex || exit
+git clone -b stage https://github.com/Polygant/hummingbot.git ./hmbot
+cd ./hmbot
+docker build -t hummingbot:latest -f Dockerfile .
+cat << EOF >> /app/opencex/docker-compose.yml
+    hummingbot:
+     container_name: hummingbot
+     hostname: hummingbot
+     restart: always
+     image: hummingbot:latest
+     volumes:
+       - /app/opencex/hmbot/conf:/home/hummingbot/conf
+       - /app/opencex/hmbot/conf/connectors:/home/hummingbot/conf/connectors
+       - /app/opencex/hmbot/conf/strategies:/home/hummingbot/conf/strategies
+       - /app/opencex/hmbot/logs:/home/hummingbot/logs
+       - /app/opencex/hmbot/data:/home/hummingbot/data
+       - /app/opencex/hmbot/scripts:/home/hummingbot/scripts
+     networks:
+       - caddy
+     environment:
+       - CONFIG_FILE_NAME=directional_strategy_rsi.py
+     tty: true
+     stdin_open: true
+EOF
+fi
 
 docker compose up -d
 
