@@ -1129,7 +1129,7 @@ cat << EOF >> /app/opencex/docker-compose.yml
      stdin_open: true
 EOF
 fi
-
+cd /app/opencex
 docker compose up -d
 
 docker stop opencex-cel opencex-wss
