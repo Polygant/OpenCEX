@@ -751,7 +751,7 @@ services:
     opencex-wss:
      container_name: opencex-wss
      image: opencex:latest
-     command: daphne -b 0.0.0.0 exchange.asgi:application
+     command: daphne -b 0.0.0.0 exchange.asgi:application  --ping-interval 600 --ping-timeout 600
      restart: always
      volumes:
       - /app/opencex/backend:/app
@@ -1123,8 +1123,6 @@ cat << EOF >> /app/opencex/docker-compose.yml
        - /app/opencex/hmbot/scripts:/home/hummingbot/scripts
      networks:
        - caddy
-     environment:
-       - CONFIG_FILE_NAME=directional_strategy_rsi.py
      tty: true
      stdin_open: true
 EOF
