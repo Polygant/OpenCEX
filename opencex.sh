@@ -1097,7 +1097,7 @@ services:
       restart: always
       image: lncm/bitcoind:v24.0.1
       volumes:
-      - ./bitcoind_data/:/bitcoin/.bitcoin/
+      - ./bitcoind_data/:/data/.bitcoin/
       networks:
       - caddy
 EOF
@@ -1147,7 +1147,7 @@ rpcallowip=0.0.0.0/0
 rpcbind=0.0.0.0
 rpcport=$BTC_NODE_PORT
 prune=20000
-wallet=/bitcoin/.bitcoin/opencex
+wallet=/data/.bitcoin/opencex
 
 EOF
 docker compose up -d
