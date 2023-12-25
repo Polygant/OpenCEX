@@ -1095,7 +1095,7 @@ services:
     bitcoind:
       container_name: bitcoind
       restart: always
-      image: kylemanna/bitcoind
+      image: lncm/bitcoind:v24.0.1
       volumes:
       - ./bitcoind_data/:/bitcoin/.bitcoin/
       networks:
