@@ -101,6 +101,31 @@ You can open it by your domain name.
 ## Partners & Sponsors ❤️
 Become a partner: [hello@polygant.net](mailto:hello@polygant.net)
 
+## Donate 💰
+You like our product and want to support the team? Nothing could be easier :)
+
+<table>
+<tr>
+<td><b>Bitcoin (BTC)</b></td>
+<td><b>USDT (TRC20)</b></td>
+<td><b>ETH, USDT, USDC (ERC20)</b></td>
+</tr>
+<tr>
+<td><img src="https://github.com/Polygant/OpenCEX/assets/119800471/60e3ac1a-ee66-473e-95d7-0c8adff9a5ae" width="250"></td>
+<td><img src="https://github.com/Polygant/OpenCEX/assets/119800471/79cb61c0-bea9-45f9-8f9f-15ff0076c0c8" width="250"></td>
+<td><img src="https://github.com/Polygant/OpenCEX/assets/119800471/5cf4e880-a33b-406e-926d-ed7a8bd9b910" width="250"></td>
+</tr>
+</table>
+
+BTC:
+**bc1qgdnah2uh49wgnlvpmpnf7jkwz6dm8teuf66ynt**
+
+USDT (TRC-20):
+**TShx7cEsDancuqU5PmVPCQ3bUMtZyiqQq2**
+
+ETH, USDT, USDC (ERC-20):
+**0x938209344aD987EFB91D7dc1F3957Ce3DD39b95**
+
 ## Community
 Ask questions at the official community Telegram chat.
 
